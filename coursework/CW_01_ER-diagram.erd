@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="CW_01_ER-diagram.erd">
+	<entities>
+		<data-source id="mysql5-1744d4f87a6-6635093b1989daeb">
+			<entity id="1" name="cars" fq-name="delivery.cars" order="0" x="968" y="318">
+				<path name="delivery"/>
+			</entity>
+			<entity id="2" name="categories" fq-name="delivery.categories" order="1" x="385" y="74">
+				<path name="delivery"/>
+			</entity>
+			<entity id="3" name="customers" fq-name="delivery.customers" order="2" x="123" y="54">
+				<path name="delivery"/>
+			</entity>
+			<entity id="4" name="employees" fq-name="delivery.employees" order="3" x="991" y="732">
+				<path name="delivery"/>
+			</entity>
+			<entity id="5" name="engagements" fq-name="delivery.engagements" order="4" x="988" y="535">
+				<path name="delivery"/>
+			</entity>
+			<entity id="6" name="handlers" fq-name="delivery.handlers" order="5" x="506" y="309">
+				<path name="delivery"/>
+			</entity>
+			<entity id="7" name="items" fq-name="delivery.items" order="6" x="129" y="520">
+				<path name="delivery"/>
+			</entity>
+			<entity id="8" name="occupations" fq-name="delivery.occupations" order="7" border-width="3" x="731" y="793">
+				<path name="delivery"/>
+			</entity>
+			<entity id="9" name="orders" fq-name="delivery.orders" order="8" x="15" y="318">
+				<path name="delivery"/>
+			</entity>
+			<entity id="10" name="rates" fq-name="delivery.rates" order="9" x="646" y="54">
+				<path name="delivery"/>
+			</entity>
+			<entity id="11" name="waybills" fq-name="delivery.waybills" order="10" x="475" y="544">
+				<path name="delivery"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="car_engagement_fk" fq-name="delivery.engagements.car_engagement_fk" type="fk" pk-ref="1" fk-ref="5"/>
+		<relation name="handlers_ibfk_2" fq-name="delivery.handlers.handlers_ibfk_2" type="fk" pk-ref="1" fk-ref="6"/>
+		<relation name="customek_category_fk" fq-name="delivery.customers.customek_category_fk" type="fk" pk-ref="2" fk-ref="3"/>
+		<relation name="rate_category_fk" fq-name="delivery.rates.rate_category_fk" type="fk" pk-ref="2" fk-ref="10"/>
+		<relation name="orders_ibfk_1" fq-name="delivery.orders.orders_ibfk_1" type="fk" pk-ref="3" fk-ref="9"/>
+		<relation name="emp_engagement_fk" fq-name="delivery.engagements.emp_engagement_fk" type="fk" pk-ref="4" fk-ref="5"/>
+		<relation name="waybills_ibfk_1" fq-name="delivery.waybills.waybills_ibfk_1" type="fk" pk-ref="6" fk-ref="11"/>
+		<relation name="waybills_ibfk_2" fq-name="delivery.waybills.waybills_ibfk_2" type="fk" pk-ref="7" fk-ref="11"/>
+		<relation name="occupation_empployee_fk" fq-name="delivery.employees.occupation_empployee_fk" type="fk" pk-ref="8" fk-ref="4"/>
+		<relation name="engagements_ibfk_1" fq-name="delivery.engagements.engagements_ibfk_1" type="fk" pk-ref="8" fk-ref="5"/>
+		<relation name="handlers_ibfk_1" fq-name="delivery.handlers.handlers_ibfk_1" type="fk" pk-ref="9" fk-ref="6"/>
+		<relation name="items_ibfk_1" fq-name="delivery.items.items_ibfk_1" type="fk" pk-ref="9" fk-ref="7"/>
+	</relations>
+</diagram>
